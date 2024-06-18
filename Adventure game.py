@@ -78,60 +78,60 @@ if answer == "left":
 						answer = input("Enter village for village and food for food :-")
 						
 					if answer == "village":
-							print("You go towards the village hunger deprived and fall unconcious on the land.")
-							print("You wake up at the house of a villager and they treat you really good and for free.")
-							print("You thank them and ask them for a permission to build your which they very kindly and happpily give.")
-							print("You are offered a temperory house until you make yours, wich you graciously accept.")
-							print("You have to make a house hence you head to the jungle with an axe(durability = 100) the toolsmith gave you.")
-							print("The durability of an axe decreases everytime you use it by 5")
-							print("You see a lot of trees at north, wet concrete by the river at east and large bamboo plants at south.")
-							print("For chopping trees enter north, for collecting concrete enter east and for collecting some strong and large bamboos enter south")
-							answer = input("Enter your answer :- ")
+						print("You go towards the village hunger deprived and fall unconcious on the land.")
+						print("You wake up at the house of a villager and they treat you really good and for free.")
+						print("You thank them and ask them for a permission to build your which they very kindly and happpily give.")
+						print("You are offered a temperory house until you make yours, wich you graciously accept.")
+						print("You have to make a house hence you head to the jungle with an axe(durability = 100) the toolsmith gave you.")
+						print("The durability of an axe decreases everytime you use it by 5")
+						print("You see a lot of trees at north, wet concrete by the river at east and large bamboo plants at south.")
+						print("For chopping trees enter north, for collecting concrete enter east and for collecting some strong and large bamboos enter south")
+						answer = input("Enter your answer :- ")
+						
+						if answer == "north":
+							print("You head north...")
+							treechop = int(input("How many trees would you like to chop down :-"))
+							axe_durability = axe_durability - (treechop * 5)
+							print("You received",treechop,"barks of trees")
+							print("The durability of your axe is",axe_durability)
 							
-							if answer == "north":
-								print("You head north...")
-								treechop = int(input("How many trees would you like to chop down :-"))
-								axe_durability = axe_durability - (treechop * 5)
-								print("You received",treechop,"barks of trees")
-								print("The durability of your axe is",axe_durability)
+						elif answer == "east":
+							print("You head East...")
+							
+							if pickaxe == 0:
+								print("You remember that you need a pickaxe to break large chunks of concrete.")
+								print("You dint have a pickaxe.")
+								print("Would you like to go north, collect some wood and craft a pickaxe, or go somewhere else ?")
+								print("Type wood for pickaxe, north to go north, and east to head east")
+								answer = input("Enter your choice:-")
 								
-							elif answer == "east":
-								print("You head East...")
+								if answer == "north":
+									print("You head north...")
+									treechop = int(input("How many trees would you like to chop down :-"))
+									axe_durability = axe_durability - (treechop * 5)
+									print("You received",treechop,"barks of trees")
+									print("The durability of your axe is",axe_durability)
+							
+							else:
+								print("You broke down large chunk of wet concrete and got smaller bricks")
+								pick_durability = pick_durability - 10
+								print("bricks + 50")
+								bricks = bricks + 50
 								
-								if pickaxe == 0:
-									print("You remember that you need a pickaxe to break large chunks of concrete.")
-									print("You dint have a pickaxe.")
-									print("Would you like to go north, collect some wood and craft a pickaxe, or go somewhere else ?")
-									print("Type wood for pickaxe, north to go north, and east to head east")
-									answer = input("Enter your choice:-")
-									
-									if answer == "north":
-										print("You head north...")
-										treechop = int(input("How many trees would you like to chop down :-"))
-										axe_durability = axe_durability - (treechop * 5)
-										print("You received",treechop,"barks of trees")
-										print("The durability of your axe is",axe_durability)
-								
-								else:
-									print("You broke down large chunk of wet concrete and got smaller bricks")
-									pick_durability = pick_durability - 10
-									print("bricks + 50")
-									bricks = bricks + 50
-									
-							elif answer == "south":
-								print("You head south...")
-								print("You see big bamboos and attempt to to break it. You get 70 bamboos but when you were breaking them, ine of them fell on your head and you lost 12 HP")
-								HP = HP - 12
-								
-							print("You head back to the village")
-							print("This is all I could think of for now. I hope you enjoyed the game. Thank You")
+						elif answer == "south":
+							print("You head south...")
+							print("You see big bamboos and attempt to to break it. You get 70 bamboos but when you were breaking them, ine of them fell on your head and you lost 12 HP")
+							HP = HP - 12
+							
+						print("You head back to the village")
+						print("This is all I could think of for now. I hope you enjoyed the game. Thank You")
 									
 					elif answer == "food":
-								print("You open packed food")
-								food = food - 1
-								print("The smell of food attracts pirrahnas which eat the boat and you with it.")
-								print("Atleast someone satisfied their hunger but you died all hungry. Game over. You lose")
-								quit()
+						print("You open packed food")
+						food = food - 1
+						print("The smell of food attracts pirrahnas which eat the boat and you with it.")
+						print("Atleast someone satisfied their hunger but you died all hungry. Game over. You lose")
+						quit()
 								
 					elif answer == "flashlight":
 						print("You make the zombies run away for the night.")
